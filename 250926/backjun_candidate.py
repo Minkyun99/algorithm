@@ -15,23 +15,26 @@ order = [0] * (N+1)
 idx = 1
 index = 0
 def find(t):
-    global student, candidate_student, idx, order
-    result = 10000
+    global student, candidate_student, idx, order, index
+    result = 100
     for j in range(len(candidate_student)):
         if student[t] >= student[candidate_student[j]]:
+            for k in range(len(candidate_student)):
+                result = min(result, order[candidate_student[k]])
+            index = k
+            candidate_student[k] = t
             order[t] = idx
             idx += 1
+            # for c in range(len(candidate_student)):
+            #     if candidate_student[c] :   
+            #         pass
+            
+            
+            
+            # for k in range(len(order)):
+            #     result = min(result, order[k]) 
 
-            for c in range(len(candidate_student)):
-                if candidate_student[c] :   
-                    pass
-            
-            
-            
-            for k in range(len(order)):
-                result = min(result, order[k]) 
-
-            candidate_student[j] = t
+            # candidate_student[j] = t
 
 
             print(candidate_student)
