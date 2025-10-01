@@ -22,6 +22,7 @@ def find(t):
             for k in range(len(candidate_student)):
                 result = min(result, order[candidate_student[k]])
             index = k
+            order[candidate_student[k]] = 0
             candidate_student[k] = t
             order[t] = idx
             idx += 1
